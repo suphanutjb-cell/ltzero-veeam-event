@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Strike Up Smarter Data Protection — Register</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap');
+
+  :root{
+    --bg: #ECEFEF;
+    --panel: #FFFFFF;
+    --ink: #1C1C1C;
+    --ink-soft: #5B6066;
+    --red: #DB3A2A;
+    --red-dark: #B72A1D;
+    --orange: #F0813F;
+    --terracotta: #9B3A22;
+    --line: #DADEDE;
+    --green: #1AA15A;
+  }
+
+  *{ box-sizing: border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page{
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 0 64px;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position: relative;
+    overflow: hidden;
+    background: var(--bg);
+  }
+  .hero img{
+    width: 100%;
+    display: block;
+  }
+  .hero-base{
+    height: 14px;
+    background: var(--terracotta);
+  }
+
+  /* ---------- LAYOUT ---------- */
+  .content{
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 40px;
+    padding: 48px 32px 0;
+  }
+  @media (max-width: 760px){
+    .content{ grid-template-columns: 1fr; padding: 36px 20px 0; }
+  }
+
+  /* ---------- LEFT: EVENT INFO ---------- */
+  .eyebrow{
+    font-weight: 800;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-size: 13px;
+    margin: 0 0 10px;
+  }
+  h1.title{
+    font-family: 'Anton', 'Inter', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: clamp(30px, 4vw, 42px);
+    line-height: 1.05;
+    margin: 0 0 18px;
+    letter-spacing: .01em;
+    color: var(--ink);
+  }
+  .title .accent{ color: var(--red); }
+
+  .lede{
+    color: var(--ink-soft);
+    font-size: 16px;
+    margin: 0 0 28px;
+    max-width: 480px;
+  }
+
+  .meta-list{
+    list-style: none;
+    margin: 0 0 32px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .meta-list li{
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .meta-icon{
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .meta-icon svg{ width: 17px; height: 17px; }
+  .meta-list .sub{
+    display:block;
+    font-weight: 400;
+    color: var(--ink-soft);
+    font-size: 13px;
+    margin-top: 2px;
+  }
+
+  .benefits{
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-bottom: 28px;
+  }
+  .benefits h3{
+    margin: 0 0 14px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--ink-soft);
+    font-weight: 800;
+  }
+  .benefits ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+  }
+  .benefits li{
+    display: flex;
+    gap: 10px;
+    font-size: 14.5px;
+    font-weight: 500;
+  }
+  .check{
+    flex-shrink: 0;
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    background: var(--green);
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    margin-top: 1px;
+  }
+  .check svg{ width: 11px; height: 11px; }
+
+  .agenda{
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 22px 24px;
+  }
+  .agenda h3{
+    margin: 0 0 14px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--ink-soft);
+    font-weight: 800;
+  }
+  .agenda-row{
+    display: flex;
+    gap: 14px;
+    padding: 10px 0;
+    border-top: 1px solid var(--line);
+  }
+  .agenda-row:first-of-type{ border-top: none; padding-top: 0; }
+  .agenda-time{
+    flex-shrink: 0;
+    width: 80px;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--red);
+    padding-top: 1px;
+  }
+  .agenda-text{ font-size: 14px; font-weight: 600; }
+  .agenda-text span{
+    display: block;
+    font-weight: 400;
+    color: var(--ink-soft);
+    font-size: 12.5px;
+    margin-top: 1px;
+  }
+
+  /* ---------- RIGHT: FORM ---------- */
+  .form-card{
+    background: var(--panel);
+    border-radius: 16px;
+    border: 1px solid var(--line);
+    padding: 30px 28px 28px;
+    box-shadow: 0 14px 32px -18px rgba(0,0,0,.25);
+    position: sticky;
+    top: 24px;
+    align-self: start;
+  }
+  .form-card h2{
+    font-family: 'Anton', 'Inter', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 22px;
+    margin: 0 0 4px;
+    letter-spacing: .01em;
+  }
+  .form-card .form-sub{
+    color: var(--ink-soft);
+    font-size: 13.5px;
+    margin: 0 0 22px;
+  }
+
+  .field{ margin-bottom: 16px; }
+  .field label{
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--ink);
+  }
+  .field label .req{ color: var(--red); }
+  .field input,
+  .field select,
+  .field textarea{
+    width: 100%;
+    padding: 11px 13px;
+    border: 1.5px solid var(--line);
+    border-radius: 9px;
+    font-family: inherit;
+    font-size: 14.5px;
+    color: var(--ink);
+    background: #FBFBFB;
+    transition: border-color .15s, background .15s;
+  }
+  .field textarea{ resize: vertical; min-height: 70px; }
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus{
+    outline: none;
+    border-color: var(--red);
+    background: #fff;
+  }
+  .field input:focus-visible,
+  .field select:focus-visible,
+  .field textarea:focus-visible{
+    outline: 2px solid var(--red);
+    outline-offset: 1px;
+  }
+
+  .row-2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .radio-group{
+    display: flex;
+    gap: 10px;
+  }
+  .radio-pill{
+    flex: 1;
+    position: relative;
+  }
+  .radio-pill input{
+    position: absolute;
+    opacity: 0;
+    width: 100%; height: 100%;
+    margin: 0;
+    cursor: pointer;
+  }
+  .radio-pill span{
+    display: block;
+    text-align: center;
+    padding: 10px 8px;
+    border: 1.5px solid var(--line);
+    border-radius: 9px;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--ink-soft);
+    background: #FBFBFB;
+    transition: all .15s;
+  }
+  .radio-pill input:checked + span{
+    border-color: var(--red);
+    background: var(--red);
+    color: #fff;
+  }
+  .radio-pill input:focus-visible + span{
+    outline: 2px solid var(--red);
+    outline-offset: 1px;
+  }
+
+  .consent{
+    display: flex;
+    gap: 9px;
+    align-items: flex-start;
+    margin: 18px 0 20px;
+  }
+  .consent input{
+    margin-top: 3px;
+    flex-shrink: 0;
+    accent-color: var(--red);
+    width: 15px; height: 15px;
+    cursor: pointer;
+  }
+  .consent label{
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    line-height: 1.45;
+  }
+
+  .submit-btn{
+    width: 100%;
+    background: var(--red);
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    padding: 15px 20px;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background .15s, transform .1s;
+  }
+  .submit-btn:hover{ background: var(--red-dark); }
+  .submit-btn:active{ transform: scale(.98); }
+  .submit-btn:focus-visible{ outline: 2px solid var(--ink); outline-offset: 2px; }
+  .submit-btn svg{ width: 16px; height: 16px; }
+
+  .error-text{
+    color: var(--red-dark);
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 5px;
+    display: none;
+  }
+  .field.has-error input,
+  .field.has-error select{
+    border-color: var(--red-dark);
+    background: #FFF5F4;
+  }
+  .field.has-error .error-text{ display: block; }
+
+  .seats-note{
+    text-align: center;
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-top: 14px;
+  }
+
+  /* ---------- SUCCESS STATE ---------- */
+  .success-view{
+    display: none;
+    text-align: center;
+    padding: 20px 6px 6px;
+  }
+  .success-view.show{ display: block; }
+  .form-card.is-success .form-fields{ display: none; }
+
+  .pins-wrap{
+    width: 100%;
+    height: 110px;
+    margin-bottom: 6px;
+  }
+  .success-view h2{
+    font-family: 'Anton', 'Inter', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 24px;
+    margin: 6px 0 8px;
+    color: var(--ink);
+  }
+  .success-view p{
+    color: var(--ink-soft);
+    font-size: 14px;
+    margin: 0 0 4px;
+    line-height: 1.5;
+  }
+  .success-view .strike-tag{
+    display: inline-block;
+    margin-top: 14px;
+    background: #F3FBF6;
+    border: 1px solid #BFE6CC;
+    color: var(--green);
+    font-weight: 700;
+    font-size: 12.5px;
+    padding: 7px 14px;
+    border-radius: 999px;
+  }
+
+  @media (prefers-reduced-motion: no-preference){
+    .pin{ transform-origin: bottom center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <img src="event-banner.jpg" alt="Strike Up Smarter Data Protection! Join LT ZERO & Veeam for an exclusive solution showcase and bowling networking event.">
+    <div class="hero-base"></div>
+  </div>
+
+  <div class="content">
+
+    <!-- LEFT COLUMN -->
+    <div class="left-col">
+      <p class="eyebrow">LT ZERO × Veeam × VST ECS</p>
+      <h1 class="title">Strike Up <span class="accent">Smarter</span> Data Protection</h1>
+      <p class="lede">An exclusive solution showcase on cutting backup storage costs without compromising recovery — followed by a bowling networking session with industry peers.</p>
+
+      <ul class="meta-list">
+        <li>
+          <span class="meta-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></svg>
+          </span>
+          <div>22nd July 2026, Wednesday<span class="sub">Mark your calendar</span></div>
+        </li>
+        <li>
+          <span class="meta-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          </span>
+          <div>1:30 PM – 6:30 PM<span class="sub">Refreshments served throughout</span></div>
+        </li>
+        <li>
+          <span class="meta-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-7.58 7-12.5A7 7 0 105 9.5C5 14.42 12 22 12 22z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          </span>
+          <div>Blu-O Rhythm & Bowl<span class="sub">Esplanade Ratchada, Bangkok</span></div>
+        </li>
+      </ul>
+
+      <div class="benefits">
+        <h3>What you'll discover</h3>
+        <ul>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span> Reduce backup storage costs</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span> Optimize cold data management</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span> Strengthen cyber resilience & data recovery</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span> Build a scalable, cost-efficient backup strategy</li>
+        </ul>
+      </div>
+
+      <div class="agenda">
+        <h3>Agenda</h3>
+        <div class="agenda-row">
+          <div class="agenda-time">1:30 PM</div>
+          <div class="agenda-text">Registration & Welcome<span>Check-in and refreshments</span></div>
+        </div>
+        <div class="agenda-row">
+          <div class="agenda-time">2:00 PM</div>
+          <div class="agenda-text">Solution Presentation & Workshop<span>LT ZERO + Veeam joint solution, partner program update</span></div>
+        </div>
+        <div class="agenda-row">
+          <div class="agenda-time">4:00 PM</div>
+          <div class="agenda-text">Bowling Networking Challenge<span>Lanes open, prizes for top 3</span></div>
+        </div>
+        <div class="agenda-row">
+          <div class="agenda-time">6:00 PM</div>
+          <div class="agenda-text">Dinner & Networking<span>Closing remarks</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN: FORM -->
+    <div class="form-card" id="formCard">
+      <div class="form-fields" id="formFields">
+        <h2>Register Now</h2>
+        <p class="form-sub">Seats are limited — reserve yours today.</p>
+
+        <form id="rsvpForm" novalidate>
+          <div class="row-2">
+            <div class="field" data-field="firstName">
+              <label>First Name <span class="req">*</span></label>
+              <input type="text" name="firstName" autocomplete="given-name">
+              <span class="error-text">Please enter your first name.</span>
+            </div>
+            <div class="field" data-field="lastName">
+              <label>Last Name <span class="req">*</span></label>
+              <input type="text" name="lastName" autocomplete="family-name">
+              <span class="error-text">Please enter your last name.</span>
+            </div>
+          </div>
+
+          <div class="field" data-field="jobTitle">
+            <label>Job Title <span class="req">*</span></label>
+            <input type="text" name="jobTitle" autocomplete="organization-title">
+            <span class="error-text">Please enter your job title.</span>
+          </div>
+
+          <div class="field" data-field="company">
+            <label>Company <span class="req">*</span></label>
+            <input type="text" name="company" autocomplete="organization">
+            <span class="error-text">Please enter your company name.</span>
+          </div>
+
+          <div class="field" data-field="email">
+            <label>Business Email <span class="req">*</span></label>
+            <input type="email" name="email" autocomplete="email">
+            <span class="error-text">Please enter a valid business email.</span>
+          </div>
+
+          <div class="field" data-field="phone">
+            <label>Contact Number <span class="req">*</span></label>
+            <input type="tel" name="phone" placeholder="incl. country code" autocomplete="tel">
+            <span class="error-text">Please enter your contact number.</span>
+          </div>
+
+          <div class="field" data-field="attending">
+            <label>Will you join us on 22nd July, 1:30–6:30 PM? <span class="req">*</span></label>
+            <div class="radio-group">
+              <label class="radio-pill">
+                <input type="radio" name="attending" value="yes">
+                <span>Yes, I'll be there</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="attending" value="no">
+                <span>Can't make it</span>
+              </label>
+            </div>
+            <span class="error-text">Please let us know if you can attend.</span>
+          </div>
+
+          <div class="field" data-field="dinner">
+            <label>Joining dinner afterward? <span class="req">*</span></label>
+            <div class="radio-group">
+              <label class="radio-pill">
+                <input type="radio" name="dinner" value="yes">
+                <span>Yes</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="dinner" value="no">
+                <span>No</span>
+              </label>
+            </div>
+            <span class="error-text">Please let us know about dinner.</span>
+          </div>
+
+          <div class="field">
+            <label>Dietary restrictions <span style="color:var(--ink-soft); font-weight:400;">(optional)</span></label>
+            <input type="text" name="dietary" placeholder="e.g. vegetarian, allergies">
+          </div>
+
+          <div class="field">
+            <label>Questions for us? <span style="color:var(--ink-soft); font-weight:400;">(optional)</span></label>
+            <textarea name="questions" rows="2"></textarea>
+          </div>
+
+          <div class="consent">
+            <input type="checkbox" id="consentBox" name="consent">
+            <label for="consentBox">By submitting, I consent to LT ZERO contacting me regarding this event.</label>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            Reserve My Seat
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </button>
+          <p class="seats-note">🎳 Learn. Network. Strike!</p>
+        </form>
+      </div>
+
+      <div class="success-view" id="successView">
+        <svg class="pins-wrap" viewBox="0 0 300 110" xmlns="http://www.w3.org/2000/svg">
+          <g class="pin" style="animation: fall1 .6s ease-out forwards;">
+            <ellipse cx="150" cy="100" rx="14" ry="5" fill="#00000014"/>
+            <path d="M150 30c-7 0-11 7-11 16 0 7 3 10 3 16 0 9-5 12-5 22 0 8 6 14 13 14s13-6 13-14c0-10-5-13-5-22 0-6 3-9 3-16 0-9-4-16-11-16z" fill="#fff" stroke="#1C1C1C" stroke-width="1.5"/>
+            <rect x="139" y="52" width="22" height="4" fill="#DB3A2A"/>
+            <rect x="141" y="60" width="18" height="3" fill="#DB3A2A"/>
+          </g>
+        </svg>
+        <h2>You're In!</h2>
+        <p>Thanks for registering — a confirmation will be sent to your email shortly.</p>
+        <p>See you on the lanes, 22nd July.</p>
+        <span class="strike-tag">🎳 Seat reserved</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  @keyframes fall1{
+    0%{ transform: rotate(0deg) translateY(-40px); opacity: 0; }
+    60%{ transform: rotate(8deg) translateY(0); opacity: 1; }
+    100%{ transform: rotate(-3deg) translateY(0); opacity: 1; }
+  }
+</style>
+
+<script>
+  const form = document.getElementById('rsvpForm');
+  const formFields = document.getElementById('formFields');
+  const successView = document.getElementById('successView');
+  const formCard = document.getElementById('formCard');
+
+  function setError(fieldEl, show){
+    fieldEl.classList.toggle('has-error', show);
+  }
+
+  function validateText(name){
+    const el = form.querySelector(`[name="${name}"]`);
+    const fieldEl = el.closest('.field');
+    const ok = el.value.trim().length > 0;
+    setError(fieldEl, !ok);
+    return ok;
+  }
+
+  function validateEmail(){
+    const el = form.querySelector('[name="email"]');
+    const fieldEl = el.closest('.field');
+    const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim());
+    setError(fieldEl, !ok);
+    return ok;
+  }
+
+  function validateRadio(name){
+    const checked = form.querySelector(`input[name="${name}"]:checked`);
+    const fieldEl = form.querySelector(`[data-field="${name}"]`);
+    setError(fieldEl, !checked);
+    return !!checked;
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    const checks = [
+      validateText('firstName'),
+      validateText('lastName'),
+      validateText('jobTitle'),
+      validateText('company'),
+      validateEmail(),
+      validateText('phone'),
+      validateRadio('attending'),
+      validateRadio('dinner')
+    ];
+
+    const allValid = checks.every(Boolean);
+    if(!allValid){
+      const firstError = formFields.querySelector('.has-error');
+      if(firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+
+    // Collect data (hook up to your backend / Google Sheet / email service here)
+    const data = Object.fromEntries(new FormData(form).entries());
+    console.log('RSVP submitted:', data);
+
+    formCard.classList.add('is-success');
+    successView.classList.add('show');
+  });
+
+  // Clear error state as user types/selects
+  form.querySelectorAll('input, select, textarea').forEach(el => {
+    el.addEventListener('input', () => {
+      const fieldEl = el.closest('.field');
+      if(fieldEl) fieldEl.classList.remove('has-error');
+    });
+  });
+</script>
+
+</body>
+</html>
